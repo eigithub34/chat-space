@@ -52,7 +52,7 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 ### association
 - belongs_to :user
-- belongs_to :groups_users
+- belongs_to :group
 
 ## groups_usersテーブル
 |Column|Type|Options|
