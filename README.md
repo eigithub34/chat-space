@@ -41,6 +41,7 @@ Things you may want to cover:
 |text|text|null: false|
 ### association
 - has many :groups_users
+- has many :messages
 - has_many :users, through: :groups_users
 
 ## messagesテーブル
