@@ -1,10 +1,12 @@
+@import 'variable'; 
+
 .header {
   height: 22px;
   width: 100%;
-  background-color: #38AEF0;
+  background-color: $lightBlueColor;
   position: relative;
   &__infomation {
-    color: #ffffff;
+    color: $basicWhiteColor;
     text-align: center;
     font-size: 17px;
     line-height: 22px;
@@ -19,7 +21,7 @@
 .contents {
   height: 100vh;
   width: 100%;
-  background-color: #ffffff;
+  background-color: $basicWhiteColor;
   display: flex;
   &__chat-side {
     height: 100%;
@@ -35,12 +37,12 @@
         width: 100%;
         font-size: 16px;
         font-weight: bold;
-        color: #ffffff;
+        color: $basicWhiteColor;
         display: flex;
         justify-content: space-between;
         &__menu {
           &__btn {
-            color: white;
+            color: $basicWhiteColor;
             text-decoration:none;
           }
         }
@@ -49,33 +51,10 @@
     &__groups {
       padding: 20px 20px 0;
       height: calc(100vh - 100px - 20px);
-      color: #ffffff;
+      color: $basicWhiteColor;
       font-weight: bold;
+      overflow: scroll;
       &__group1 {
-        height: 31px;
-        width: 260px;
-        margin-bottom: 40px;
-        &__name {
-          font-size: 15px;
-        }
-        &__message {
-          padding-top: 5px;
-          font-size: 11px;
-        }
-      }
-      &__group2 {
-        height: 31px;
-        width: 260px;
-        margin-bottom: 40px;
-        &__name {
-          font-size: 15px;
-        }
-        &__message {
-          padding-top: 5px;
-          font-size: 11px;
-        }
-      }
-      &__group3 {
         height: 31px;
         width: 260px;
         margin-bottom: 40px;
@@ -92,7 +71,7 @@
   &__chat-main {
     height: 100%;
     width: calc(100vw - 300px);
-    background-color: #ffffff;
+    background-color: $basicWhiteColor;
     &__header {
       padding: 0 40px;
       height: 99px;
@@ -109,7 +88,7 @@
         &__menber {
           margin-top: 15px;
           font-size: 12px;
-          color: #999999;
+          color: $grayColor;
         }
       }
       a {
@@ -117,17 +96,18 @@
       }
       &__edit-btn {
         height: 38px;
-        border: solid 1px #38AEF0;
+        border: solid 1px $lightBlueColor;
         line-height: 40px;
         padding: 0 20px;
         margin-top: 28px;
-        color: #38AEF0;
+        color: $lightBlueColor;
       }
     }
     &__messages {
       padding: 46px 40px;
       height: calc(100vh - 100px - 92px - 90px);
       width: calc(100vw - 300px - 80px);
+      overflow: scroll;
       &__comment-form1 {
         padding-bottom: 40px;
         &__username-date {
@@ -135,39 +115,18 @@
           &__username {
             font-size: 16px;
             font-weight: bold;
-            color: #434A54;
+            color: $blackColor;
           }
           &__date {
             margin-left: 10px;
             font-size: 12px;
-            color: #999999;
+            color: $grayColor;
           }
         }
         &__comment {
           margin-top: 10px;
           font-size: 14px;
-          color: #434A54
-        }
-      }
-      &__comment-form2 {
-        padding-bottom: 40px;
-        &__username-date {
-          display: flex;
-          &__username {
-            font-size: 16px;
-            font-weight: bold;
-            color: #434A54;
-          }
-          &__date {
-            margin-left: 10px;
-            font-size: 12px;
-            color: #999999;
-          }
-        }
-        &__comment {
-          margin-top: 10px;
-          font-size: 14px;
-          color: #434A54
+          color: $blackColor;
         }
       }
     }
@@ -187,7 +146,7 @@
             width: 100%;
             padding-left: 10px; 
             border-style: none;
-            color: #434A54;
+            color: $blackColor;
             font-size: 16px;
             box-sizing: border-box;
           }
@@ -207,8 +166,8 @@
           height: 50px;
           width: 100px;
           line-height: 50px;
-          color: white;
-          background-color: #38AEF0;
+          color: $basicWhiteColor;
+          background-color: $lightBlueColor;
           box-sizing: border-box;
           cursor: pointer;
         }
