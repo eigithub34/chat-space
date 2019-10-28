@@ -105,7 +105,7 @@
     }
     &__messages {
       padding: 46px 40px;
-      height: calc(100vh - 100px - 92px - 90px);
+      height: calc(100vh - 100px - 92px - 110px);
       width: calc(100vw - 300px - 80px);
       overflow: scroll;
       &__comment-form1 {
@@ -131,9 +131,12 @@
       }
     }
     &__form {
+      width: calc(100vw - 300px);
+      height: 90px;
       padding: 20px 40px;
       background-color: #dddddd;
       box-sizing: border-box;
+      position: fixed;
       &__send-form {
         display: flex;
         &__input-box {
