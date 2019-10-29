@@ -1,48 +1,48 @@
-@import 'variable'; 
+@import 'colors'; 
 
-.header {
-  height: 22px;
-  width: 100%;
-  background-color: $lightBlueColor;
-  position: relative;
-  &__infomation {
-    color: $basicWhiteColor;
-    text-align: center;
-    font-size: 17px;
-    line-height: 22px;
-  }
-  &--fixd{
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-}
+// .header {
+//   height: 22px;
+//   width: 100%;
+//   background-color: $light_blue;
+//   position: relative;
+//   &__infomation {
+//     color: $white;
+//     text-align: center;
+//     font-size: 17px;
+//     line-height: 22px;
+//   }
+//   &--fixd{
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//   }
+// }
 
 .contents {
   height: 100vh;
   width: 100%;
-  background-color: $basicWhiteColor;
+  background-color: $white;
   display: flex;
   &__chat-side {
     height: 100%;
     width: 300px;
-    background-color: #2f3e51;
+    background-color: $side_blue_light;
     &__header {
       padding: 0 20px;
       height: 100px;
       width: 260px;
-      background-color: #253141;
+      background-color: $side_blue_dark;
       line-height: 100px;
       &__box {
         width: 100%;
         font-size: 16px;
         font-weight: bold;
-        color: $basicWhiteColor;
+        color: $white;
         display: flex;
         justify-content: space-between;
         &__menu {
           &__btn {
-            color: $basicWhiteColor;
+            color: $white;
             text-decoration:none;
           }
         }
@@ -51,7 +51,7 @@
     &__groups {
       padding: 20px 20px 0;
       height: calc(100vh - 100px - 20px);
-      color: $basicWhiteColor;
+      color: $white;
       font-weight: bold;
       overflow: scroll;
       &__group1 {
@@ -71,7 +71,7 @@
   &__chat-main {
     height: 100%;
     width: calc(100vw - 300px);
-    background-color: $basicWhiteColor;
+    background-color: $white;
     &__header {
       padding: 0 40px;
       height: 99px;
@@ -88,24 +88,24 @@
         &__menber {
           margin-top: 15px;
           font-size: 12px;
-          color: $grayColor;
+          color: $light_gray;
         }
       }
       a {
-        text-decoration:none;
+        text-decoration: none;
       }
       &__edit-btn {
         height: 38px;
-        border: solid 1px $lightBlueColor;
+        border: solid 1px $light_blue;
         line-height: 40px;
         padding: 0 20px;
         margin-top: 28px;
-        color: $lightBlueColor;
+        color: $light_blue;
       }
     }
     &__messages {
       padding: 46px 40px;
-      height: calc(100vh - 100px - 92px - 110px);
+      height: calc(100vh - 100px - 70px - 110px);
       width: calc(100vw - 300px - 80px);
       overflow: scroll;
       &__comment-form1 {
@@ -115,18 +115,18 @@
           &__username {
             font-size: 16px;
             font-weight: bold;
-            color: $blackColor;
+            color: $black;
           }
           &__date {
             margin-left: 10px;
             font-size: 12px;
-            color: $grayColor;
+            color: $light_gray;
           }
         }
         &__comment {
           margin-top: 10px;
           font-size: 14px;
-          color: $blackColor;
+          color: $black;
         }
       }
     }
@@ -149,7 +149,7 @@
             width: 100%;
             padding-left: 10px; 
             border-style: none;
-            color: $blackColor;
+            color: $black;
             font-size: 16px;
             box-sizing: border-box;
           }
@@ -169,8 +169,8 @@
           height: 50px;
           width: 100px;
           line-height: 50px;
-          color: $basicWhiteColor;
-          background-color: $lightBlueColor;
+          color: $white;
+          background-color: $light_blue;
           box-sizing: border-box;
           cursor: pointer;
         }

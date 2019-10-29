@@ -1,16 +1,17 @@
-.header
-  .header__infomation
-    Created group
+-# .header
+-#   .header__infomation
+-#     Created group
 
 .contents
   .contents__chat-side
     .contents__chat-side__header
       .contents__chat-side__header__box
-        %p()username
+        %p() 
+          = current_user.name
         .contents__chat-side__header__box__menu
           =link_to "", class: "contents__chat-side__header__box__menu__btn" do
             = fa_icon 'edit'
-          =link_to "", class: "contents__chat-side__header__box__menu__btn" do
+          =link_to edit_user_path(current_user), class: "contents__chat-side__header__box__menu__btn" do
             = fa_icon 'cog'
     .contents__chat-side__groups
       .contents__chat-side__groups__group1
