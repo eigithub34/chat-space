@@ -9,16 +9,18 @@
         %p() 
           = current_user.name
         .contents__chat-side__header__box__menu
-          =link_to "", class: "contents__chat-side__header__box__menu__btn" do
+          =link_to new_group_path, class: "contents__chat-side__header__box__menu__btn" do
             = fa_icon 'edit'
           =link_to edit_user_path(current_user), class: "contents__chat-side__header__box__menu__btn" do
             = fa_icon 'cog'
     .contents__chat-side__groups
-      .contents__chat-side__groups__group1
-        .contents__chat-side__groups__group1__name
-          groupname
-        .contents__chat-side__groups__group1__message
-          first message
+      - current_user.groups.each do |group|
+        .contents__chat-side__groups__group
+          = link_to group_messages_path(group) do
+            .contents__chat-side__groups__group__name
+              = group.name
+            .contents__chat-side__groups__group__message
+              メッセージはまだありません。
   .contents__chat-main
     .contents__chat-main__header
       .contents__chat-main__header__group-chat
@@ -26,7 +28,7 @@
           groupname
         .contents__chat-main__header__group-chat__menber
           Member : username username2
-      =link_to "", class: "contents__chat-main__header__edit-btn" do
+      =link_to edit_group_path(@group), class: "contents__chat-main__header__edit-btn" do
         Edit
     .contents__chat-main__messages
       .contents__chat-main__messages__comment-form1
