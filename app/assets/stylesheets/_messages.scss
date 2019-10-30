@@ -54,10 +54,14 @@
       color: $white;
       font-weight: bold;
       overflow: scroll;
-      &__group1 {
+      &__group {
         height: 31px;
         width: 260px;
         margin-bottom: 40px;
+        a {
+          text-decoration: none;
+          color: $white;
+        }
         &__name {
           font-size: 15px;
         }
@@ -137,6 +141,7 @@
       background-color: #dddddd;
       box-sizing: border-box;
       position: fixed;
+      bottom: 0;
       &__send-form {
         display: flex;
         &__input-box {
