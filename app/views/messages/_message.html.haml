@@ -1,0 +1,11 @@
+.contents__chat-main__messages__comment-form1
+  .contents__chat-main__messages__comment-form1__username-date
+    .contents__chat-main__messages__comment-form1__username-date__username
+      = message.user.name
+    .contents__chat-main__messages__comment-form1__username-date__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .contents__chat-main__messages__comment-form1__comment
+    - if message.content.present?
+      %p.contents__chat-main__messages__comment-form1__comment__content
+        = message.content
+    = image_tag message.image.url, class: 'contents__chat-main__messages__comment-form1__comment__image' if message.image.present?
