@@ -3,24 +3,25 @@
 -#     Created group
 
 .contents
-  .contents__chat-side
-    .contents__chat-side__header
-      .contents__chat-side__header__box
-        %p() 
-          = current_user.name
-        .contents__chat-side__header__box__menu
-          =link_to new_group_path, class: "contents__chat-side__header__box__menu__btn" do
-            = fa_icon 'edit'
-          =link_to edit_user_path(current_user), class: "contents__chat-side__header__box__menu__btn" do
-            = fa_icon 'cog'
-    .contents__chat-side__groups
-      - current_user.groups.each do |group|
-        .contents__chat-side__groups__group
-          = link_to group_messages_path(group) do
-            .contents__chat-side__groups__group__name
-              = group.name
-            .contents__chat-side__groups__group__message
-              メッセージはまだありません。
+  -# .contents__chat-side
+  -#   .contents__chat-side__header
+  -#     .contents__chat-side__header__box
+  -#       %p() 
+  -#         = current_user.name
+  -#       .contents__chat-side__header__box__menu
+  -#         =link_to new_group_path, class: "contents__chat-side__header__box__menu__btn" do
+  -#           = fa_icon 'edit'
+  -#         =link_to edit_user_path(current_user), class: "contents__chat-side__header__box__menu__btn" do
+  -#           = fa_icon 'cog'
+  -#   .contents__chat-side__groups
+  -#     - current_user.groups.each do |group|
+  -#       .contents__chat-side__groups__group
+  -#         = link_to group_messages_path(group) do
+  -#           .contents__chat-side__groups__group__name
+  -#             = group.name
+  -#           .contents__chat-side__groups__group__message
+  -#             = group.show_last_message
+  = render 'shared/side_bar'
   .contents__chat-main
     .contents__chat-main__header
       .contents__chat-main__header__group-chat
@@ -31,19 +32,22 @@
       =link_to edit_group_path(@group), class: "contents__chat-main__header__edit-btn" do
         Edit
     .contents__chat-main__messages
-      .contents__chat-main__messages__comment-form1
-        .contents__chat-main__messages__comment-form1__username-date
-          .contents__chat-main__messages__comment-form1__username-date__username
-            username1
-          .contents__chat-main__messages__comment-form1__username-date__date
-            2019/10/24(Thu) 20:00:00
-        .contents__chat-main__messages__comment-form1__comment
-          カキカキ
+      -# .contents__chat-main__messages__comment-form1
+      -#   .contents__chat-main__messages__comment-form1__username-date
+      -#     .contents__chat-main__messages__comment-form1__username-date__username
+      -#       username1
+      -#     .contents__chat-main__messages__comment-form1__username-date__date
+      -#       2019/10/24(Thu) 20:00:00
+      -#   .contents__chat-main__messages__comment-form1__comment
+      -#     カキカキ
+      = render @messages
     .contents__chat-main__form
-      .contents__chat-main__form__send-form
-        .contents__chat-main__form__send-form__input-box
-          %input.contents__chat-main__form__send-form__input-box__text{placeholder: "type a message", type: "text"}/
-          %label.contents__chat-main__form__send-form__input-box__image{for: "upload-icon"}
-            %i.fa.fa-picture-o
-            %input.contents__chat-main__form__send-form__input-box__image__file{type: "file", id: "upload-icon"}/
-        %input.contents__chat-main__form__send-form__send-btn{type: "submit", value: "Send"}/
+      = form_for [@group, @message], class: 'contents__chat-main__form__box' do |f|
+        .contents__chat-main__form__input-box
+          = f.text_field :content, class: 'contents__chat-main__form__message', placeholder: 'type a message'
+          .contents__chat-main__form__mask
+            = f.label :image, class: 'contents__chat-main__form__mask-image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+        .contents__chat-main__form__send-btn
+          = f.submit 'Send', class: 'contents__chat-main__form__button'

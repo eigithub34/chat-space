@@ -109,7 +109,7 @@
     }
     &__messages {
       padding: 46px 40px;
-      height: calc(100vh - 100px - 70px - 110px);
+      height: calc(100vh - 100px - 70px - 112px);
       width: calc(100vw - 300px - 80px);
       overflow: scroll;
       &__comment-form1 {
@@ -135,50 +135,42 @@
       }
     }
     &__form {
-      width: calc(100vw - 300px);
-      height: 90px;
+      height: 50px;
+      background-color: #ddd;
       padding: 20px 40px;
-      background-color: #dddddd;
-      box-sizing: border-box;
+      width: calc(100vw - 380px);
       position: fixed;
       bottom: 0;
-      &__send-form {
+      .new_message {
         display: flex;
-        &__input-box {
-          position: relative;
-          width: 100%;
-          margin-right: 15px;
-          box-sizing: border-box;
-          &__text {
-            height: 50px;
-            width: 100%;
-            padding-left: 10px; 
-            border-style: none;
-            color: $black;
-            font-size: 16px;
-            box-sizing: border-box;
-          }
-          &__image {
-             position: absolute;
-             top: 10px;
-             right: 10px;
-             font-size: 1.3rem;
-             cursor: pointer;
-             &__file {
-               display: none;
-             }
-          }
-        }
-        &__send-btn {
-          padding: 0 30px;
-          height: 50px;
-          width: 100px;
-          line-height: 50px;
-          color: $white;
-          background-color: $light_blue;
-          box-sizing: border-box;
-          cursor: pointer;
-        }
+      }
+      &__input-box {
+        display: flex;
+        position: relative;
+        width: 100%;
+      }
+      &__message {
+        height: 50px;
+        border: none;
+        padding: 0 40px 0 10px;
+        width: 100%;
+      }
+      &__mask-image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .hidden {
+        display: none;
+      }
+      &__button {
+        height: 50px;
+        width: 100px;
+        background-color: $light_blue;
+        padding: 0 30px;
+        margin-left: 15px;
+        color: $white;
       }
     }
   }
