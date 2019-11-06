@@ -39,10 +39,12 @@ $(function() {
       $('.contents__chat-main__messages').append(html);
       $('.contents__chat-main__messages').animate({scrollTop: $('.contents__chat-main__messages')[0].scrollHeight}, 'fast');
       $('.new_message')[0].reset();
-      $('.contents__chat-main__form__button').prop("disabled",false);
     })
     .fail(function(){
       alert('メッセージ送信に失敗しました');
-    });
+    })
+    .always(function(){
+      $('.contents__chat-main__form__button').prop("disabled",false);
+    })
   });
 });
