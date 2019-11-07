@@ -89,8 +89,13 @@
           font-size: 20px;
           color: #333333;
         }
-        &__menber {
+        &__menber-list {
+          display: flex;
           margin-top: 15px;
+          font-size: 12px;
+          color: $light_gray;
+        }
+        &__menber {
           font-size: 12px;
           color: $light_gray;
         }

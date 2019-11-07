@@ -26,11 +26,14 @@
     .contents__chat-main__header
       .contents__chat-main__header__group-chat
         .contents__chat-main__header__group-chat__groupname
-          groupname
-        .contents__chat-main__header__group-chat__menber
-          Member : username username2
-      =link_to edit_group_path(@group), class: "contents__chat-main__header__edit-btn" do
-        Edit
+          = @group.name
+        %ul.contents__chat-main__header__group-chat__menber-list
+          Member ：
+          %li.contents__chat-main__header__group-chat__menber
+            - @group.users.each do |user|
+              = user[:name]
+      =link_to "Edit", edit_group_path(@group), class: "contents__chat-main__header__edit-btn", data: {"turbolinks": false}
+
     .contents__chat-main__messages
       -# .contents__chat-main__messages__comment-form1
       -#   .contents__chat-main__messages__comment-form1__username-date
@@ -41,6 +44,7 @@
       -#   .contents__chat-main__messages__comment-form1__comment
       -#     カキカキ
       = render @messages
+
     .contents__chat-main__form
       = form_for [@group, @message], class: 'contents__chat-main__form__box' do |f|
         .contents__chat-main__form__input-box
